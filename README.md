@@ -48,6 +48,6 @@ Autores
 Mariano Luis Silva, Miguel Angel Guido, Roberto Macieri, Daniel Icardo, [pongan sus nombres acá]
 
 Soporte
-======
+-
 
 cimparato@kennedy.edu.ar
