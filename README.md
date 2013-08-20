@@ -9,7 +9,7 @@ La aplicación se basa en tres tecnologías:
 * Vaadin7             https://vaadin.com/home
 
 Construcción
-======
+---------
 
 Los fuentes se pueden obtener de https://github.com/Magian1/Carrito.
 Para obtenerlos necesitan un cliente de Git (http://git-scm.com/). Intenten con EGit (http://www.eclipse.org/egit/) si usan eclipse, si están en Linux y prefieren usar una consola y comandos generalmente el paquete para su distribución se llamará git (entonces 'app-get install git' o 'yum install git').
@@ -24,7 +24,7 @@ Maven se va a encargar de gestionar el ciclo de vida del proyecto (compilación,
 La primera vez que lo ejecuten puede que tarde algunos minutos. Noten que el comando se comunica a repositorios de código remotos y se baja las dependencias del proyecto. ¿Dónde lo baja? Fíjense en su directorio de usuario, ahí van a ver un directorio llamado .m2 y dentro otro llamado repository, ese es su repositorio local de Maven.
 
 Despliegue
-======
+-
 
 Sobre la raiz del proyecto:
 
@@ -36,18 +36,18 @@ Para desplegarlo en Google App Engine hay que realizar otros pasos:
 Proximamente
 
 Subir sus cambios
-======
+-
 
 Asegúrense de nunca subir cambios que son temporales o que tienen que ver con consecuencias secundarias del proceso de construcción o importación a Maven (este último genera un directorio con el nombre de target/ que nunca debería subirse por ejemplo). Los casos típicos se incluyen en el archivo .gitignore que está en la raiz del proyecto.
 
 Cada grupo tiene su branch: Servicios, Persistencia y Aplicacion/Presentacion. Por el momento suban exclusivamente al branch que corresponde a su grupo y recuerden hacer 'git pull origin master' periódicamente. Para saber qué hace el comando y otros comandos de Git consulten: http://try.github.io/levels/1/challenges/1
 
 Autores
-======
+-
 
 Mariano Luis Silva, Miguel Angel Guido, Roberto Macieri, Daniel Icardo, [pongan sus nombres acá]
 
 Soporte
-======
+-
 
 cimparato@kennedy.edu.ar
