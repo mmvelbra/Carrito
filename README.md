@@ -19,7 +19,7 @@ El archivo pom.xml indica que tienen que usar Maven (http://maven.apache.org/), 
 
 Maven se va a encargar de gestionar el ciclo de vida del proyecto (compilación, pruebas, pruebas de integración, empaquetación, despliegue, entre otras cosas) basándose en valores por defecto y el descriptor pom.xml que está en la raiz del proyecto. Cuando lo tengan instalado y configurado como se mencionó arriba, solamente tienen que ejecutar esto parado en el mismo directorio donde está el pom.xml:
 
-  mvn clean install
+  mvn clean install -P vaadin-compile
 
 La primera vez que lo ejecuten puede que tarde algunos minutos. Noten que el comando se comunica a repositorios de código remotos y se baja las dependencias del proyecto. ¿Dónde lo baja? Fíjense en su directorio de usuario, ahí van a ver un directorio llamado .m2 y dentro otro llamado repository, ese es su repositorio local de Maven.
 

@@ -8,11 +8,11 @@
     </context-param>
     <servlet>
         <servlet-name>Vaadin Application Servlet</servlet-name>
-        <servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class>
+        <servlet-class>com.vaadin.server.GAEVaadinServlet</servlet-class>
         <init-param>
             <description>Vaadin application class to start</description>
             <param-name>application</param-name>
-            <param-value>ar.edu.uk.MyVaadinApplication</param-value>
+            <param-value>ar.edu.uk.CarritoUI</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
