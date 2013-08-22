@@ -50,4 +50,4 @@ Mariano Luis Silva, Miguel Angel Guido, Roberto Macieri, Daniel Icardo, [pongan 
 Soporte
 -
 
-cimparato@kennedy.edu.ar
+imparato@kennedy.edu.ar
