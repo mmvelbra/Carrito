@@ -13,11 +13,12 @@
 		<appengine.target.version>1.8.3</appengine.target.version>
 		<appengine.app.version>1</appengine.app.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.1.2</vaadin.version>
+		<vaadin.version>7.1.3</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
 
 	<build>
+		<outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -31,6 +32,12 @@
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>${appengine.target.version}</version>
+				<configuration>
+					<jvmFlags>
+						<jvmFlag>-Xdebug</jvmFlag>
+						<jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
+					</jvmFlags>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -38,6 +45,7 @@
 				<version>2.4</version>
 				<configuration>
 					<archiveClasses>true</archiveClasses>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<webResources>
 						<!-- in order to interpolate version from pom into appengine-web.xml -->
 						<resource>
@@ -45,18 +53,12 @@
 							<filtering>true</filtering>
 							<targetPath>WEB-INF</targetPath>
 						</resource>
+						<resource>
+							<directory>${basedir}/src/main/webapp/VAADIN</directory>
+							<filtering>true</filtering>
+							<targetPath>WEB-INF/classes/VAADIN</targetPath>
+						</resource>
 					</webResources>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src/main/webapp/VAADIN/widgetsets</directory>
-						</fileset>
-					</filesets>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -94,10 +96,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -117,7 +115,7 @@
 											vaadin-maven-plugin
 										</artifactId>
 										<versionRange>
-											[7.1.2,)
+											[7.1.3,)
 										</versionRange>
 										<goals>
 											<goal>resources</goal>
@@ -219,19 +217,13 @@
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-testing</artifactId>
-			<version>1.8.3</version>
+			<version>${appengine.target.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-stubs</artifactId>
-			<version>1.8.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-stubs</artifactId>
-			<version>1.8.3</version>
+			<version>${appengine.target.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

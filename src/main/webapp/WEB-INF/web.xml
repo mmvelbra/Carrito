@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-    <display-name>Vaadin Web Application</display-name>
-    <context-param>
-        <description>Vaadin production mode</description>
-        <param-name>productionMode</param-name>
-        <param-value>false</param-value>
-    </context-param>
-    <servlet>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
-        <servlet-class>com.vaadin.server.GAEVaadinServlet</servlet-class>
-        <init-param>
-            <description>Vaadin application class to start</description>
-            <param-name>application</param-name>
-            <param-value>ar.edu.uk.CarritoUI</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Vaadin Web Application</display-name>
+	<servlet>
+		<servlet-name>carrito</servlet-name>
+		<servlet-class>com.vaadin.server.GAEVaadinServlet</servlet-class>
+
+		<init-param>
+			<param-name>UI</param-name>
+			<param-value>ar.edu.uk.CarritoUI</param-value>
+		</init-param>
+
+		<!-- If not using the default widget set -->
+		<init-param>
+			<param-name>widgetset</param-name>
+			<param-value>ar.edu.uk.CarritoWidgetSet</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>carrito</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
 </web-app>
