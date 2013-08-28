@@ -52,7 +52,7 @@ Cada grupo tiene su branch: Servicios, Persistencia y Aplicacion/Presentacion. P
 Autores
 -
 
-Mariano Luis Silva, Miguel Angel Guido, Roberto Macieri, Daniel Icardo, [pongan sus nombres acá]
+Mariano Luis Silva, Miguel Angel Guido, Roberto Macieri, Daniel Icardo, Patricio Nicola
 
 Soporte
 -
